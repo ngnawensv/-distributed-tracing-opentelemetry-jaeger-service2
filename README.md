@@ -11,5 +11,6 @@ This serviceonsume fake API [{JSON} Placeholder](https://jsonplaceholder.typicod
 
 Follow this link to monitor your traces [http://localhost:16686/search](http://localhost:16686/search)
 
+here is the [ Postman Collection](https://universal-astronaut-31238.postman.co/workspace/Cad-workspace~738aee90-9fbd-41ee-840e-67f1815afe82/collection/7848965-76146291-86b5-409a-9a5c-97630d3bb302?action=share&creator=7848965&active-environment=7848965-9c867869-450f-491c-b7c3-2b256807bcac)
 
 
