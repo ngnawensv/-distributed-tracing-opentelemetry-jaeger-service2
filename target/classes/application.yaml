@@ -3,10 +3,8 @@ server:
 
 spring:
   application:
-    name: Service 2
+    name: service-2
 
-tracing:
-  url: http://localhost:4318/v1/traces
 
 management:
   endpoints:
@@ -31,6 +29,15 @@ management:
       #probability: 0.5 - Trace half of the requests - Moderate traffic, general purpose.
       #probability: 0.01 - Trace 1 out of every 100 requests - High-traffic production (default in many systems).
       probability: 1.0
+  #auto-configure OpenTelemetry
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318
+  propagation:
+    # Recommended: W3C Trace Context + Baggage
+    type:
+      - w3c
+      - b3
 
 logging:
   # Activate this level to display the trace
@@ -89,5 +96,5 @@ logging:
     #org.apache: WARN
     #ch.qos.logback: WARN
   pattern:
-    level: "%5p [Service:${spring.application.name:}, TraceId:%X{traceId:-}, SpanId:%X{spanId:-}]"
+    level: "%5p [svc:${spring.application.name:}, tid:%X{traceId:-}, spi:%X{spanId:-}]"
 
